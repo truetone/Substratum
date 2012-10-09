@@ -25,3 +25,4 @@ Or a 1/3 2/3 layout like this:
 
 ##To Do
 * Incorporate line-height defaults to make it a simple grid framework.
+* Decide on a CSS style guide for formatting and commenting code and use it.
