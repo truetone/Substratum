@@ -39,6 +39,14 @@
 	width: 66%;
 }
 
+/* Single-columns take up 100% */
+.column.single {
+	clear: both;
+	margin-left: 2%;
+	margin-right: 2%;
+	width: 100%
+}
+
 /* Clearing hacks */
 .column:after {
 	visibility: hidden;
