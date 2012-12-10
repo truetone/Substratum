@@ -5,8 +5,23 @@
  * @license GNU GPL http://www.gnu.org/licenses/gpl.html
  * @version 1.2
  */
-/* Half-width column */
+/*
+ *
+
+ Widths and margins
+ Make sure these add up. For instance, default-width + default-margin = 50%.
+ That way two columns using those styles will equal 100%.
+ Likewise, narrow and wide are designed to work together.
+ narrow-width + narrow-margin = 35%
+ wide-width + wide-margin = 70%
+ Adding the .last class to the last .narrow element will remove the narrow-margin and bring the total to 100%.
+
+ Feel free to adjust these, but make sure the percentages add up.
+
+ *
+ */
 .column {
+  /* Half-width column */
   display: inline-block;
   float: left;
   margin-right: 2%;
