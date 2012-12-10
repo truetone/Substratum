@@ -3,69 +3,61 @@
  *
  * @author Tony Thomas http://anthonygthomas.com
  * @license GNU GPL http://www.gnu.org/licenses/gpl.html
- * @version 1
+ * @version 1.2
  */
-
 /* Half-width column */
 .column {
-	display: inline-block;
-	float: left;
-	margin-right: 2%;
-	width: 48%;
+  display: inline-block;
+  float: left;
+  margin-right: 2%;
+  width: 48%;
 }
-
-/* The last column should have a "last" class to trim off the right margin */
-.column.last {
-	margin-left: 2%;
-	margin-right: 0;
-	width: 48%;
+.column.first {
+  /* Makes sure the first column clears */
+  clear: left;
 }
-
-/* Narrow columns create 3-column layouts */
 .column.narrow {
-	margin-right: 5%;
-	width: 30%;
+  /* Narrow columns create 3-column layouts */
+  margin-right: 5%;
+  width: 30%;
 }
-
-/* This makes the third column fit neatly in */
-.column.narrow.last {
-	margin-left: 0;
-	margin-right: 0;
+.column.last {
+  /* The last column should have a "last" class to trim off the right margin */
+  margin-left: 2%;
+  margin-right: 0;
 }
-
-/* Wide columns are 2/3 width */
+.column.last.narrow {
+  /* This makes the third column fit neatly in */
+  margin-left: 0;
+  margin-right: 0;
+}
 .column.wide {
-	margin-right: 4%;
-	width: 66%;
+  /* Wide columns are 2/3 width */
+  margin-right: 4%;
+  width: 66%;
 }
-
-/* Single-columns take up 100% */
 .column.single {
-	clear: both;
-	margin-left: 2%;
-	margin-right: 2%;
-	width: 100%
+  /* Occassionally you just want a single, clearing column. */
+  clear: both;
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 100%;
 }
-
-/* Clearing hacks */
 .column:after {
-	visibility: hidden;
-	display: block;
-	font-size: 0;
-	content: "";
-	clear: both;
-	height: 0;
+  /* Clearing hack */
+  clear: both;
+  content: "";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
 }
 
-/* IE hacks */
+/* IE Hacks */
 * html .column {
-	zoom: 1;
-}
-*:first-child+html .column {
-	zoom: 1;
+  zoom: 1;
 }
 
-/* Makes sure the first column clears */
-.first {
-	clear: left;
+*:first-child + html .column {
+  zoom: 1;
 }

@@ -1,0 +1,70 @@
+/**
+ * Substratum CSS
+ *
+ * @author Tony Thomas http://anthonygthomas.com
+ * @license GNU GPL http://www.gnu.org/licenses/gpl.html
+ * @version 1.2
+ */
+
+/* Half-width column */
+.column {
+	display: inline-block;
+	float: left;
+	margin-right: 2%;
+	width: 48%;
+
+	&.first {
+	/* Makes sure the first column clears */
+		clear: left;
+	}
+
+	&.narrow {
+	/* Narrow columns create 3-column layouts */
+		margin-right: 5%;
+		width: 30%;
+	}
+
+	&.last {
+	/* The last column should have a "last" class to trim off the right margin */
+		margin-left: 2%;
+		margin-right: 0;
+		
+		&.narrow {
+		/* This makes the third column fit neatly in */
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	&.wide {
+	/* Wide columns are 2/3 width */
+		margin-right: 4%;
+		width: 66%;
+	}
+	
+	&.single {
+	/* Occassionally you just want a single, clearing column. */
+		clear: both;
+		margin-left: 2%;
+		margin-right: 2%;
+		width: 100%;
+	}
+
+	&:after {
+	/* Clearing hack */
+		clear: both;
+		content: "";
+		display: block;
+		font-size: 0;
+		height: 0;
+		visibility: hidden;
+	}
+}
+
+/* IE Hacks */
+* html .column {
+	zoom: 1;
+}
+*:first-child+html .column {
+	zoom: 1;
+}
